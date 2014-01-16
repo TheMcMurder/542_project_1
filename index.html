@@ -1,23 +1,64 @@
 <html>
-	<head>
-		<title>IS542 web Project 1</title>
-		<link href="css/styles.css" rel="stylesheet" />
-		<script src="/js/d3.v3/d3.v3.min.js" charset="utf-8"></script>
+<head>
+	<title>IS542 web Project 1</title>
+	<link href="css/styles.css" rel="stylesheet" />
+	<script src="/js/d3.v3/d3.v3.min.js" charset="utf-8"></script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
-	</head>
-	<body>
-		<section id="what_is_d3js">
-			<h1>What is D3js?</h1>
+</head>
+<body>
+	<section id="what_is_d3js">
+		<h1>What is D3js?</h1>
+		<div class='text'>
 			<p>
 				D3js is a javascript library designed to solve one of the biggest problems on the internet, displaying Data visually.  Instead of asking people to look at a table and make sense of it.  d3js seeks to solve the problem by using web standards to display information visually.
 			</p>
+		</div>
 
-		</section>
+	</section>
+	<section id="css_selectors">
+		<h2>Selections</h2>
+		<div class="text">
+			<p>
+				d3js uses css_selectors to grab elements on the page and each element is handled by the selection.  Meaning you can grab amnything by it's id or class and use the selection as a variable.  This eliminates the need to create many temporary variables.
+
+				Here's an example of how the W3C DOM API expects you go grab items
+			</p>
+
+		</div>
+
+		<div class='code'>
+
+			<code class='javascript'>
+				<span class='keyword'>var</span> paragraphs = document.getElementsByTagName(<span class='string'>"p"</span>);
+				<span class='keyword'>for</span> (<span class='keyword'>var</span> i = <span class='number'>0</span>; i &lt; paragraphs.length; i<span class='special'>++</span>) {
+				<span class='keyword'>var</span> paragraph = paragraphs.item(i);
+				paragraph.style.setProperty(<span class='string'>"color"</span>, <span class='string'>"white"</span>, <span class='literal'>null</span>);
+			}
+
+		</div>
+
+		<div class='text'>
+			<p> d3 uses a declarative approach.  This means that you can manipulate items based off a selection</p>
+
+		</div>
+		<div class='code'>
+
+			<code class="javascript">d3.selectAll(<span class='string'>"p"</span>).style(<span class='string'>"color"</span>, <span class='string'>"white"</span>);</code>
+
+		</div>
+
+		<div class='highlight'>
+			<p> both selections of code do the exact same thing, the question is... which one would you want to use?</p>
+
+		</div>
+
+	</section>
 
 
 
 
 
-	</body>
+</body>
 
 </html>
