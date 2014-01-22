@@ -2,13 +2,26 @@
 <head>
 	<title>IS542 web Project 1</title>
 	<link href="css/styles.css" rel="stylesheet" />
-	<script src="/js/d3.v3/d3.v3.min.js" charset="utf-8"></script>
+	<!-- <script src="/js/d3.v3/d3.v3.min.js" charset="utf-8"></script> -->
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
+	<section class='header'>
+		<div id = 'navbar'>
+			<ul>
+				<li><a href = "http://about.me/justinmcmurdie" class='header link'>Who am I?</a></li>
+				<li><a href = "/justinmcmurdie" class='header link'>Internal</a></li>
+				<li><a href = '/index.html' id='active' class = 'header link' >What is D3js</a></li>
+			</ul>
+		</div>
+
+
+	</section>
 	<section id="what_is_d3js">
-		<h1>What is D3js?</h1>
+		<div id = 'title'>
+			<h1>What is D3js?</h1>
+		</div>
 		<div class='text'>
 			<p>
 				<a class='link' href='http://d3js.org'>D3js</a> is a javascript library designed to solve one of the biggest problems on the internet, displaying Data visually.  Instead of asking people to look at a table and make sense of it.  d3js seeks to solve the problem by using web standards to display information visually.
@@ -30,10 +43,10 @@
 		<div class='code'>
 
 			<code class='javascript'>
-				<p><span class='keyword'>var</span> paragraphs = document.getElementsByTagName(<span class='string'>"p"</span>);</p>
-				<p><span class='keyword'>for</span> (<span class='keyword'>var</span> i = <span class='number'>0</span>; i &lt; paragraphs.length; i<span class='special'>++</span>) {</p>
-				<p class='tab'><span class='keyword'>var</span> paragraph = paragraphs.item(i);</p>
-				<p class='tab'>paragraph.style.setProperty(<span class='string'>"color"</span>, <span class='string'>"white"</span>, <span class='literal'>null</span>);</p>
+				<p><span class='keyword'>var</span> paragraphs = <span class='keyword'>document</span>.<span class='keyword'>getElementsByTagName</span>(<span class='string'>"p"</span>);</p>
+				<p><span class='special'>for</span> (<span class='keyword'>var</span> i = <span class='number'>0</span>; i &lt; paragraphs.length; i<span class='special'>++</span>) {</p>
+				<p class='tab'><span class='keyword'>var</span> paragraph = paragraphs.<span class='keyword'>item</span>(i);</p>
+				<p class='tab'>paragraph.<span class='keyword'>style</span>.setProperty(<span class='string'>"color"</span>, <span class='string'>"white"</span>, <span class='literal'>null</span>);</p>
 			}
 
 		</div>
@@ -44,7 +57,7 @@
 		</div>
 		<div class='code'>
 
-			<code class="javascript">d3.selectAll(<span class='string'>"p"</span>).style(<span class='string'>"color"</span>, <span class='string'>"white"</span>);</code>
+			<code class="javascript">d3.selectAll(<span class='string'>"p"</span>).<span class='keyword'>style</span>(<span class='string'>"color"</span>, <span class='string'>"white"</span>);</code>
 
 		</div>
 

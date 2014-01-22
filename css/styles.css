@@ -41,7 +41,8 @@ body{
 	padding-right: 15px;
 	font-size: 16px;
 	font-family: Ubuntu;
-	background-color: #e4e5e5;
+	color: #edede8;
+	background-color: #272822;
 	display: inline-block;
 	width: 40%;
 	margin: 2em 0 2em 20px;
@@ -51,24 +52,24 @@ body{
 }
 
 .javascript .keyword {
-  color: #3182bd;
+  color: #69d1ef;
 }
 
 .javascript .number {
-  color: #31a354;
+  color: #ae81ff;
 }
 
 .javascript .special {
-  color: #e6550d;
+  color: #f92772;
 }
 
 .javascript .string,
 .javascript .regexp {
-  color: #756bb1;
+  color: #e6db74;
 }
 
 .javascript .literal{
-	color: #f92772;
+	color: #ae81ff;
 }
 
 .javascript .tab{
@@ -80,5 +81,35 @@ body{
 	color: steelblue;
 	text-decoration: none;
 
+}
+.header .link {
+	color: #31322E;
+	background-color: #e6e6e6;
+}
+
+.header ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+}
+.header li{
+	
+	display: inline;
+
+}
+.header a{
+	
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+
+#active {
+	color: #e6e6e6;
+	background-color: #31322E;
 }
 
