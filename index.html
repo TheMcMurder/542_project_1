@@ -29,6 +29,15 @@
 		</div>
 
 	</section>
+
+	<section id='why'>
+		<div class='text'>
+			<p> That brings us to the biggest question of them all.  What should I use d3js for?  Quite honestly you can use it for anything.  I've used it to make cool stuff for my wife, and I've built full blown web apps with it.  The goal of d3 is displaying data in the browser, by binding it to the DOM.  </p>
+
+			<p> I have 2 different sets of examples to show you, I put the fun stuff <a class='link' href='http://bl.ocks.org/themcmurder'>here</a> and I put the more practical stuff that is <a class='link' href='http://jsfiddle.net/TheMcMurder/H3HTe/'>data driven here</a> </p>
+		</div>
+
+	</section>
 	<section id="css_selectors">
 		<header>
 			<h2>Selections</h2>
@@ -64,7 +73,7 @@
 		</div>
 
 		<div class='text'>
-			<p> but you can still grab elements individually.  You don't have to sacrifice efficiency to get simplicity</p>
+			<p> but you can still grab elements individually.  You don't have to sacrifice functionality to get simplicity.</p>
 
 		</div>
 		<div class='code'>
@@ -73,13 +82,77 @@
 
 		</div>
 
-		<div class='highlight'>
-			<p> both selections of code do the exact same thing, the question is... which one would you want to use?</p>
+		<section id='dynamic_properties'>
+			<header>
+				<h2>Dyanmic Properties</h2>
+			</header>
+			<div class ='text'> 
+				<p> Readers familiar with other DOM frameworks such as jQuery or Prototype should immediately recognize similarities with D3. Yet styles, attributes, and other properties can be specified as functions of data in D3, not just simple constants. Despite their apparent simplicity, these functions can be surprisingly powerful; the d3.geo.path function, for example, projects geographic coordinates into SVG path data. D3 provides many built-in reusable functions and function factories, such as graphical primitives for area, line and pie charts.</p>
+				<p> For example, if I wanted to randomly color paragraphs I could use the following code: </p> 
+			</div>
+			<div class ='code'>
+				<code class='javascript'>
+					<p>d3.selectAll(<span class='string'>"p"</span>).<span class='attribute'>style</span>(<span class='string'>"color"</span>, <span class='keyword'>function</span>( ){</p>
 
-		</div>
-		<div class='text'>
-			<p> want to see some examples? check them out <a class='link' href='http://bl.ocks.org/themcmurder'>here</a> </p>
-		</div>
+					<p class='tab'>
+						<span class='special'>return</span> <span class='string'>"hsl("</span> <span class="special">+</span> <span class='keyword'>Math</span>.<span class='property'>random</span>( ) <span class="special"> * </span> <span class="number"> 360 </span> <span class="special">+</span> <span class='string'>",100%,50%)"</span>
+					</p>
+
+					<p>
+					}
+				</p>
+			</code>
+
+
+
+		</section>
+
+		<section id='enter_exit'>
+			<header>
+				<h2>Enter, Update, Exit</h2>
+			</header>
+			<div class ='text'> 
+				<p> Using the enter and exit selections built into d3, you can create new nodes for incoming data and remove outgoing nodes that are no longer needed.  Because this is so different from how many other languages work I've created a custom <a class ='link' href='http://jsfiddle.net/TheMcMurder/H3HTe/'>jsfiddle</a> to show how this works. Before you go look, check out the description below:</p>
+
+				<p>The purpose of this JSfiddle is to show how enter, update, and exit works in d3js.  The data values above are the data. The image had three manually created black circles.  My update will resize them to the appropriate size (based on data) and change their color to blue.  All newly drawn objects will be turned green and any object that is exiting will be turned red.
+
+					The transitions are delayed to make it easier to see.  No delay is needed for this to work.
+
+					Step 1: 2.5 seconds of viewing everything as it was created
+					Step 2: Color change based off Enter, Update, Exit (1.5 second duration)
+					Step 3: size change based off data, or exit based off data, 1.5 second duration
+
+					by Default only 2 pieces of data are being used, Add some to see how enter works
+
+
+				</p>
+			</div>
+
+		</section>
+
+
+		<section id='all_for_now'>
+			<header>
+				<h2>Thanks for reading</h2>
+			</header>
+			<div class='text'>
+				<p>
+					Thanks for checking out my simple tutorial.  I hope you enjoy learning how to make d3 visualizations.  If you need more information (and you probably will) check out the following sources:
+				</p>
+
+				<ul>
+					<li><a class='link' href='http://alignedleft.com/tutorials/d3/adding-elements'>alighnedleft.com</a></li>
+					<li><a class='link' href='http://bost.ocks.org/mike/join/'>Thinking with joins - by the creator of d3</a></li>
+					<li><a class='link' href='http://bost.ocks.org/mike/d3/workshop/#23'>slides from the creator of d3</a></li>
+
+				</ul>
+			</div>
+
+		</section>
+		
+
+		
+		
 
 	</section>
 

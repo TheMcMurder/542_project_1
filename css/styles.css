@@ -6,16 +6,19 @@ h1 {
   white-space: nowrap;
   margin-top: 20px;
   text-align: center;
-  width: 60%
+  font-family: Ubuntu;
+
 }
 h2{
 	color: #a4a5a5;
 	font-size: 26px;
 	font-weight: 300;
 	margin-top: 30px;
-	width: 60%
+	font-family: Ubuntu;
+
 }
 body{
+	width: 60%;
 	margin: 25px;
 }
 
@@ -34,7 +37,7 @@ body{
 	font-size: 14px;
 	font-family: Open Sans;
 	font-weight: 500px;
-	width: 60%
+
 
 }
 
@@ -47,11 +50,11 @@ body{
 	color: #edede8;
 	background-color: #272822;
 	display: inline-block;
-	width: 40%;
+	width: 80%;
 	margin: 2em 0 2em 20px;
 	padding-bottom: 15px;
 	/*border-left: solid #272822;*/
-	border-radius: 15px;
+	border-radius: 8px;
 }
 
 .javascript .keyword {
@@ -125,7 +128,7 @@ body{
 
 .left {
     float: left;
-    width: 30%;
+    width: 50%;
     font-family: Ubuntu;
 
 }
@@ -133,7 +136,7 @@ body{
 .right {
 
     float: left;
-    width: 30%;
+    width: 50%;
     font-family: Ubuntu;
 }
 
