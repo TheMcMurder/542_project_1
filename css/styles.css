@@ -56,6 +56,10 @@ body{
 
 .javascript .keyword {
   color: #69d1ef;
+  font-style: italic;
+}
+.javascript .property{
+	color: #69d1ef;
 }
 
 .javascript .number {
@@ -77,6 +81,9 @@ body{
 
 .javascript .tab{
 	padding-left: 30px;
+}
+.javascript .buffer{
+	padding: 3px;
 }
 
 .link {
