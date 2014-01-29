@@ -1,27 +1,27 @@
 <!doctype html >
 <html>
-	<head>
-		<title>IS542 web Project 1</title>
-		<meta charset="utf-8" />
-		<link href="css/styles.css" rel="stylesheet" />
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<!-- <script src="/js/d3.v3/d3.v3.min.js" charset="utf-8"></script> -->
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<head>
+	<title>IS542 web Project 1</title>
+	<meta charset="utf-8" />
+	<link href="css/styles.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<script src="js/d3.v3/d3.v3.min.js" charset="utf-8"></script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	
-	</head>
-	<body>
-		<section class='header'>
-			<nav>
-				<ul>
-					<li><a href = "http://about.me/justinmcmurdie" class='header link'>Who am I?</a></li>
-					<li><a href = "justinmcmurdie.html" class='header link'>Internal</a></li>
-					<li><a href = 'index.html' id='active' class = 'header link' >What is D3js</a></li>
-				</ul>
-			</nav>
-		</section>
-		<h1>What is D3js?</h1>
-		<div class='left_col'>
-			<section id="what_is_d3js">
+</head>
+<body>
+	<section class='header'>
+		<nav>
+			<ul>
+				<li><a href = "http://about.me/justinmcmurdie" class='header link'>Who am I?</a></li>
+				<li><a href = "justinmcmurdie.html" class='header link'>Internal</a></li>
+				<li><a href = 'index.html' id='active' class = 'header link' >What is D3js</a></li>
+			</ul>
+		</nav>
+	</section>
+	<h1>What is D3js?</h1>
+	<div class='left_col'>
+		<section id="what_is_d3js">
 			
 			<div class='text'>
 				<p>
@@ -32,7 +32,7 @@
 		<section id='why'>
 			<div class='text'>
 				<p> That brings us to the biggest question of them all.  What should I use d3js for?  Quite honestly you can use it for anything.  I've used it to make cool stuff for my wife, and I've built full blown web apps with it.  The goal of d3 is displaying data in the browser, by binding it to the DOM.  </p>
-	
+
 				<p> I have 2 different sets of examples to show you, I put the fun stuff <a class='link' href='http://bl.ocks.org/themcmurder'>here</a> and I put the more practical stuff that is <a class='link' href='http://jsfiddle.net/TheMcMurder/H3HTe/'>data driven here</a> </p>
 			</div>
 		</section>
@@ -41,22 +41,22 @@
 			<div class="text">
 				<p>
 					d3js uses css_selectors to grab elements on the page and each element is handled by the selection.  Meaning you can grab amnything by it's id or class and use the selection as a variable.  This eliminates the need to create many temporary variables.
-	
+
 					Here's an example of how the W3C DOM API expects you go grab items
 				</p>
 			</div>
-	
+
 			<div class='code'>
-	
+
 				<code class='javascript'>
 					<p><span class='keyword'>var</span> paragraphs = <span class='keyword'>document</span>.<span class='property'>getElementsByTagName</span>(<span class='string'>"p"</span>);</p>
 					<p><span class='special'>for</span> (<span class='keyword'>var</span> i = <span class='number'>0</span>; i &lt; paragraphs.length; i<span class='special'>++</span>) {</p>
 					<p class='tab'><span class='keyword'>var</span> paragraph = paragraphs.<span class='property'>item</span>(<span class="buffer">i</span>);</p>
 					<p class='tab'>paragraph.<span class='property'>style</span>.setProperty(<span class='string'>"color"</span>, <span class='string'>"white"</span>, <span class='literal'>null</span>);</p>
 				}
-	
+
 			</div>
-	
+
 			<div class='text'>
 				<p> d3 uses a declarative approach.  This means that you can manipulate items based off a selection</p>
 			</div>
@@ -64,7 +64,7 @@
 			<div class='code'>
 				<code class="javascript">d3.selectAll(<span class='string'>"p"</span>).<span class='property'>style</span>(<span class='string'>"color"</span>, <span class='string'>"white"</span>);</code>
 			</div>
-	
+
 			<div class='text'>
 				<p> but you can still grab elements individually.  You don't have to sacrifice functionality to get simplicity.</p>
 			</div>
@@ -72,7 +72,7 @@
 			<div class='code'>
 				<code class="javascript">d3.select(<span class='string'>"#uniqueID"</span>).<span class='property'>style</span>(<span class='string'>"color"</span>, <span class='string'>"white"</span>);</code>
 			</div>
-	
+
 			<section id='dynamic_properties'>
 				<h2>Dyanmic Properties</h2>
 				<div class ='text'> 
@@ -82,65 +82,124 @@
 				<div class ='code'>
 					<code class='javascript'>
 						<p>d3.selectAll(<span class='string'>"p"</span>).<span class='attribute'>style</span>(<span class='string'>"color"</span>, <span class='keyword'>function</span>( ){</p>
-	
+
 						<p class='tab'>
 							<span class='special'>return</span> <span class='string'>"hsl("</span> <span class="special">+</span> <span class='keyword'>Math</span>.<span class='property'>random</span>( ) <span class="special"> * </span> <span class="number"> 360 </span> <span class="special">+</span> <span class='string'>",100%,50%)"</span>
 						</p>
-	
+
 						<p>
 						}
 					</p>
 				</code>
 			</section>
-	
+
 			<section id='enter_exit'>
 				<h2>Enter, Update, Exit</h2>
 				<div class ='text'> 
 					<p> Using the enter and exit selections built into d3, you can create new nodes for incoming data and remove outgoing nodes that are no longer needed.  Because this is so different from how many other languages work I've created a custom <a class ='link' href='http://jsfiddle.net/TheMcMurder/H3HTe/'>jsfiddle</a> to show how this works. Before you go look, check out the description below:</p>
-	
+
 					<p>The purpose of this JSfiddle is to show how enter, update, and exit works in d3js.  The data values above are the data. The image had three manually created black circles.  My update will resize them to the appropriate size (based on data) and change their color to blue.  All newly drawn objects will be turned green and any object that is exiting will be turned red.
-	
+
 						The transitions are delayed to make it easier to see.  No delay is needed for this to work.
-	
+
 						Step 1: 2.5 seconds of viewing everything as it was created
 						Step 2: Color change based off Enter, Update, Exit (1.5 second duration)
 						Step 3: size change based off data, or exit based off data, 1.5 second duration
-	
+
 						by Default only 2 pieces of data are being used, Add some to see how enter works
-	
-	
+
+
 					</p>
 				</div>
-	
+
 			</section>
-	
-	
+
+
 			<section id='all_for_now'>
 				<h2>Thanks for reading</h2>
 				<div class='text'>
 					<p>
 						Thanks for checking out my simple tutorial.  I hope you enjoy learning how to make d3 visualizations.  If you need more information (and you probably will) check out the following sources:
 					</p>
-	
+
 					<ul>
 						<li><a class='link' href='http://alignedleft.com/tutorials/d3/adding-elements'>alighnedleft.com</a></li>
 						<li><a class='link' href='http://bost.ocks.org/mike/join/'>Thinking with joins - by the creator of d3</a></li>
 						<li><a class='link' href='http://bost.ocks.org/mike/d3/workshop/#23'>slides from the creator of d3</a></li>
-	
+
 					</ul>
 				</div>
-	
+
 			</section>
 		</section>
-		</div>
-		<div class='right_col'>
-			<section class='d3_example' id="build_pi_chart">
-			I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up I should be on the right side but not messing stuff up 
+	</div>
+	<div class='right_col'>
+		<section class='d3_example' id="build_pi_chart">
+			
 		</section>
-		</div>
-		
-		<footer>
-			This is a footer make me magic
-		</footer>
-	</body>
+	</div>
+
+	<footer>
+		This is a footer make me magic
+	</footer>
+</body>
+<script type="text/javascript">
+
+var section = d3.select("#build_pi_chart")
+
+
+
+
+var width = 400,
+height = 400,
+radius = Math.min(width, height) / 2;
+
+var data;
+
+data = [
+["Camera", 1500],
+["Xbox One", 100],
+["Playstation 4", 0],
+["Sony 4kTV", 5]    
+
+]
+
+data = d3.range(10).map(Math.random).sort(d3.descending);
+
+console.log(data)
+
+var color = d3.scale.category20();
+
+var arc = d3.svg.arc()
+.outerRadius(radius - 10)
+.innerRadius(radius - 70);
+
+var pie = d3.layout.pie();
+
+var svg = section.append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var arcs = svg.selectAll("g.arc")
+.data(pie(data))
+.enter().append("g")
+.attr("class", "arc");
+
+arcs.append("path")
+.attr("fill", function(d, i) { return color(i); })
+// .attr("d", arc)
+
+.transition()
+.duration(1000)
+.attrTween("d", tweenDonutChart)
+
+
+function tweenDonutChart(b) {
+  b.innerRadius = 0;
+  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+  return function(t) { return arc(i(t)); };
+}
+</script>
 </html>
