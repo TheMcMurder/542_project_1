@@ -4,10 +4,16 @@ h1 {
   font-weight: 200;
   letter-spacing: -2px;
   white-space: nowrap;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   text-align: center;
   font-family: Ubuntu;
+  width: 100%;
 
+}
+nav{
+	padding-top: 15px;
+	width: 100%;
+	text-align: center;
 }
 h2{
 	color: #a4a5a5;
@@ -15,11 +21,35 @@ h2{
 	font-weight: 300;
 	margin-top: 30px;
 	font-family: Ubuntu;
+	margin-left: 20px;
 
 }
 body{
+	width: 100%;
+	margin: 0px;
+}
+footer{
+	height: 50px;
+	width: 100%;
+	margin: 0px;
+	font-family: Ubuntu;
+	background-color: #272822;
+	color: #f8f8e6;
+	text-align: center;
+	float: left;
+	
+}
+body p{
+	margin-left: 35px;
+}
+
+.left_col{
 	width: 60%;
-	margin: 25px;
+	float: left;
+}
+.right_col{
+	width: 40%;
+	float: right;
 }
 
 .highlight{
