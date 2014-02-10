@@ -1,23 +1,19 @@
 <!doctype html >
 <html>
 <head>
-	<title>IS542 web Project 1</title>
+
 	<meta charset="utf-8" />
 	<link href="css/styles.css" rel="stylesheet" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<script src="js/d3.v3/d3.v3.min.js" charset="utf-8"></script>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<script src="js/hinjection.js"></script>
+	<script src="js/finjection.js"></script>
 	
 </head>
 <body>
-	<section class='header'>
-		<nav>
-			<ul>
-				<li><a href = "http://about.me/justinmcmurdie" class='header link'>Who am I?</a></li>
-				<li><a href = "justinmcmurdie.html" class='header link'>Internal</a></li>
-				<li><a href = 'index.html' id='active' class = 'header link' >What is D3js</a></li>
-			</ul>
-		</nav>
+	<section id='injection_header' class='header'>
+		
 	</section>
 	<h1>What is D3js?</h1>
 	<div class='left_col'>
@@ -112,6 +108,8 @@
 					</p>
 				</div>
 
+				
+
 			</section>
 
 
@@ -139,12 +137,12 @@
 		</section>
 	</div>
 
-	<footer>
-		This is a footer make me magic
+	<footer id = 'injection_footer'>
+
 	</footer>
 </body>
-<script type="text/javascript" src='js/pi_chart.js'>
+<script type="text/javascript" src='js/pi_chart.js'></script>
+<script src="js/main.js"></script>
 
 
-</script>
 </html>
