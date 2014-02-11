@@ -10,3 +10,4 @@ FooterInjection = new FooterInjection(document.URL)
 var footer = document.getElementById('injection_footer')
 footer.appendChild(FooterInjection.el)
 
+
