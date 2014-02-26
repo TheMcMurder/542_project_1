@@ -1,3 +1,7 @@
+.clear{
+  clear:both;
+}
+
 .modalDialog {
 	position: fixed;
 	font-family: ubuntu;
@@ -266,4 +270,7 @@ body p{
 .right .normal_list{
 	list-style-type: square;
 	text-align: left;
+}
+.toggle_class{
+	color: steelblue;
 }
